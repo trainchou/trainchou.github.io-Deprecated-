@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://trainchou.github.io/atom.xml" rel="self"/>
   <link href="http://trainchou.github.io/"/>
-  <updated>2014-11-26T10:56:22+08:00</updated>
+  <updated>2014-11-26T11:03:46+08:00</updated>
   <id>http://trainchou.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,16 +12,5 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Title]]></title>
-    <link href="http://trainchou.github.io/blog/2014/11/25/title/"/>
-    <updated>2014-11-25T14:10:32+08:00</updated>
-    <id>http://trainchou.github.io/blog/2014/11/25/title</id>
-    <content type="html"><![CDATA[<h2>test</h2>
-
-<p>test</p>
-]]></content>
-  </entry>
   
 </feed>
