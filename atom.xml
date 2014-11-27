@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[叽歪]]></title>
+  <link href="http://trainchou.github.io/atom.xml" rel="self"/>
+  <link href="http://trainchou.github.io/"/>
+  <updated>2014-11-26T16:37:42+08:00</updated>
+  <id>http://trainchou.github.io/</id>
+  <author>
+    <name><![CDATA[zcy]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[叽歪叽歪]]></title>
+    <link href="http://trainchou.github.io/blog/ji-wai-ji-wai/"/>
+    <updated>2014-11-26T13:37:41+08:00</updated>
+    <id>http://trainchou.github.io/blog/ji-wai-ji-wai</id>
+    <content type="html"><![CDATA[<p>来叽歪叽歪。</p>
+
+<ol>
+<li>叽歪</li>
+<li>叽歪叽歪</li>
+<li>叽歪叽歪叽歪</li>
+<li>叽歪叽歪叽歪叽歪</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>
