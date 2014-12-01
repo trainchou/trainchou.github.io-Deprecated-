@@ -4,7 +4,7 @@
   <title><![CDATA[叽歪]]></title>
   <link href="http://trainchou.github.io/atom.xml" rel="self"/>
   <link href="http://trainchou.github.io/"/>
-  <updated>2014-11-26T16:37:42+08:00</updated>
+  <updated>2014-12-01T17:47:21+08:00</updated>
   <id>http://trainchou.github.io/</id>
   <author>
     <name><![CDATA[zcy]]></name>
@@ -14,17 +14,217 @@
 
   
   <entry>
-    <title type="html"><![CDATA[叽歪叽歪]]></title>
-    <link href="http://trainchou.github.io/blog/ji-wai-ji-wai/"/>
-    <updated>2014-11-26T13:37:41+08:00</updated>
-    <id>http://trainchou.github.io/blog/ji-wai-ji-wai</id>
-    <content type="html"><![CDATA[<p>来叽歪叽歪。</p>
+    <title type="html"><![CDATA[搜索引擎选择： Elasticsearch与Solr]]></title>
+    <link href="http://trainchou.github.io/blog/elasticsearchyu-solr/"/>
+    <updated>2014-11-27T15:42:21+08:00</updated>
+    <id>http://trainchou.github.io/blog/elasticsearchyu-solr</id>
+    <content type="html"><![CDATA[<h1>搜索引擎选取调研文档</h1>
+
+<h2>Elasticsearch简介<a href="http://fuxiaopang.gitbooks.io/learnelasticsearch"><sup>*</sup></a></h2>
+
+<p>Elasticsearch是一个实时的分布式搜索和分析引擎。它可以帮助你用前所未有的速度去处理大规模数据。</p>
+
+<p>它可以用于全文搜索，结构化搜索以及分析，当然你也可以将这三者进行组合。</p>
+
+<p>Elasticsearch是一个建立在全文搜索引擎Apache Lucene&trade;基础上的搜索引擎，可以说Lucene是当今最先进，最高效的全功能开源搜索引擎框架。</p>
+
+<p>但是Lucene只是一个框架，要充分利用它的功能，需要使用JAVA，并且在程序中集成Lucene。需要很多的学习了解，才能明白它是如何运行的，Lucene确实非常复杂。</p>
+
+<p>Elasticsearch使用Lucene作为内部引擎，但是在使用它做全文搜索时，只需要使用统一开发好的API即可，而不需要了解其背后复杂的Lucene的运行原理。</p>
+
+<p>当然Elasticsearch并不仅仅是Lucene这么简单，它不但包括了全文搜索功能，还可以进行以下工作:</p>
+
+<ul>
+<li><p>分布式实时文件存储，并将每一个字段都编入索引，使其可以被搜索。</p></li>
+<li><p>实时分析的分布式搜索引擎。</p></li>
+<li><p>可以扩展到上百台服务器，处理PB级别的结构化或非结构化数据。</p></li>
+</ul>
+
+
+<p>这么多的功能被集成到一台服务器上，你可以轻松地通过客户端或者任何你喜欢的程序语言与ES的RESTful API进行交流。</p>
+
+<p>Elasticsearch的上手是非常简单的。它附带了很多非常合理的默认值，这让初学者很好地避免一上手就要面对复杂的理论，</p>
+
+<p>它安装好了就可以使用了，用很小的学习成本就可以变得很有生产力。</p>
+
+<p>随着越学越深入，还可以利用Elasticsearch更多高级的功能，整个引擎可以很灵活地进行配置。可以根据自身需求来定制属于自己的Elasticsearch。</p>
+
+<p>使用案例：
+* 维基百科使用Elasticsearch来进行全文搜做并高亮显示关键词，以及提供search-as-you-type、did-you-mean等搜索建议功能。</p>
+
+<ul>
+<li><p>英国卫报使用Elasticsearch来处理访客日志，以便能将公众对不同文章的反应实时地反馈给各位编辑。</p></li>
+<li><p>StackOverflow将全文搜索与地理位置和相关信息进行结合，以提供more-like-this相关问题的展现。</p></li>
+<li><p>GitHub使用Elasticsearch来检索超过1300亿行代码。</p></li>
+<li><p>每天，Goldman Sachs使用它来处理5TB数据的索引，还有很多投行使用它来分析股票市场的变动。</p></li>
+</ul>
+
+
+<p>但是Elasticsearch并不只是面向大型企业的，它还帮助了很多类似DataDog以及Klout的创业公司进行了功能的扩展。</p>
+
+<h2>Elasticsearch的优缺点<a href="http://stackoverflow.com/questions/10213009/solr-vs-elasticsearch"><sup>*</sup></a><a href="http://huangx.in/22/translation-solr-vs-elasticsearch"><sup>*</sup></a>:</h2>
+
+<h3>优点</h3>
 
 <ol>
-<li>叽歪</li>
-<li>叽歪叽歪</li>
-<li>叽歪叽歪叽歪</li>
-<li>叽歪叽歪叽歪叽歪</li>
+<li><p>Elasticsearch是分布式的。不需要其他组件，分发是实时的，被叫做&#8221;Push replication&#8221;。</p></li>
+<li><p>Elasticsearch 完全支持 Apache Lucene 的接近实时的搜索。</p></li>
+<li><p>处理<strong>多用户</strong>（<a href="http://en.wikipedia.org/wiki/Multitenancy">multitenancy</a>）不需要特殊配置，而Solr则需要更多的高级设置。</p></li>
+<li><p>Elasticsearch 采用 Gateway 的概念，使得完备份更加简单。</p></li>
+</ol>
+
+
+<h3>缺点</h3>
+
+<ol>
+<li><p>只有一名开发者（当前Elasticsearch GitHub组织已经不只如此，已经有了相当活跃的维护者）</p></li>
+<li><p>还不够自动（不适合当前新的Index Warmup API）</p></li>
+</ol>
+
+
+<h2>Solr简介<a href="http://zh.wikipedia.org/wiki/Solr"><sup>*</sup></a></h2>
+
+<p>Solr（读作“solar”）是Apache Lucene项目的开源企业搜索平台。其主要功能包括全文检索、命中标示、分面搜索、动态聚类、数据库集成，以及富文本（如Word、PDF）的处理。Solr是高度可扩展的，并提供了分布式搜索和索引复制。Solr是最流行的企业级搜索引擎，Solr4 还增加了NoSQL支持。</p>
+
+<p>Solr是用Java编写、运行在Servlet容器（如Apache Tomcat或Jetty）的一个独立的全文搜索服务器。 Solr采用了Lucene Java搜索库为核心的全文索引和搜索，并具有类似REST的HTTP/XML和JSON的API。 Solr强大的外部配置功能使得无需进行Java编码，便可对其进行调整以适应多种类型的应用程序。Solr有一个插件架构，以支持更多的高级定制。</p>
+
+<p>因为2010年Apache Lucene和Apache Solr项目合并，两个项目是由同一个Apache软件基金会开发团队制作实现的。提到技术或产品时，Lucene/Solr或Solr/Lucene是一样的。</p>
+
+<h2>Solr的优缺点</h2>
+
+<h3>优点</h3>
+
+<ol>
+<li>Solr有一个更大、更成熟的用户、开发和贡献者社区。</li>
+<li>Solr比较成熟、稳定。</li>
+<li>不考虑建索引的同时进行搜索，速度更快。</li>
+</ol>
+
+
+<h3>缺点</h3>
+
+<ol>
+<li>建立索引时，搜索效率下降。</li>
+</ol>
+
+
+<h2>Elasticsearch与Solr的比较<a href="http://blog.socialcast.com/realtime-search-solr-vs-elasticsearch/"><sup>*</sup></a></h2>
+
+<p>当单纯的对已有数据进行搜索时，Solr更快。</p>
+
+<p><img src="../images/search_fresh_index_while_idle.png" alt="Search Fesh Index While Idle" /></p>
+
+<p>当实时建立索引时, Solr会产生io阻塞，查询性能较差, Elasticsearch具有明显的优势。</p>
+
+<p><img src="../images/search_fresh_index_while_indexing.png" alt="search_fresh_index_while_indexing" /></p>
+
+<p>随着数据量的增加，Solr的搜索效率会变得更低，而Elasticsearch却没有明显的变化。</p>
+
+<p><img src="../images/search_fresh_index_while_indexing.png" alt="search_fresh_index_while_indexing" /></p>
+
+<p>综上所述，Solr的架构不适合实时搜索的应用。</p>
+
+<h2>实际生产环境测试<a href="http://blog.socialcast.com/realtime-search-solr-vs-elasticsearch/"><sup>*</sup></a></h2>
+
+<p>下图为将搜索引擎从Solr转到Elasticsearch以后的平均查询速度有了50倍的提升。</p>
+
+<p><img src="../images/average_execution_time.jpg" alt="average_execution_time" /></p>
+
+<h2>其他基于Lucene的开源搜索引擎解决方案<a href="http://mail-archives.apache.org/mod_mbox/hbase-user/201006.mbox/%3C149150.78881.qm@web50304.mail.re2.yahoo.com%3E"><sup>*</sup></a></h2>
+
+<ol>
+<li>直接使用 <a href="http://lucene.apache.org">Lucene</a></li>
+</ol>
+
+
+<p> 说明：Lucene 是一个 JAVA 搜索类库，它本身并不是一个完整的解决方案，需要额外的开发工作。</p>
+
+<p> 优点：成熟的解决方案，有很多的成功案例。apache 顶级项目，正在持续快速的进步。庞大而活跃的开发社区，大量的开发人员。它只是一个类库，有足够的定制和优化空间：经过简单定制，就可以满足绝大部分常见的需求；经过优化，可以支持 10亿+ 量级的搜索。</p>
+
+<p> 缺点：需要额外的开发工作。所有的扩展，分布式，可靠性等都需要自己实现；非实时，从建索引到可以搜索中间有一个时间延迟，而当前的“近实时”(Lucene Near Real Time search)搜索方案的可扩展性有待进一步完善</p>
+
+<ul>
+<li><a href="http://katta.sourceforge.net">Katta</a></li>
+</ul>
+
+
+<p> 说明：基于 Lucene 的，支持分布式，可扩展，具有容错功能，准实时的搜索方案。</p>
+
+<p> 优点：开箱即用，可以与 Hadoop 配合实现分布式。具备扩展和容错机制。</p>
+
+<p> 缺点：只是搜索方案，建索引部分还是需要自己实现。在搜索功能上，只实现了最基本的需求。成功案例较少，项目的成熟度稍微差一些。因为需要支持分布式，对于一些复杂的查询需求，定制的难度会比较大。</p>
+
+<ul>
+<li><a href="http://svn.apache.org/repos/asf/hadoop/mapreduce/trunk/src/contrib/index/README">Hadoop contrib/index</a></li>
+</ul>
+
+
+<p> 说明：Map/Reduce 模式的，分布式建索引方案，可以跟 Katta 配合使用。</p>
+
+<p> 优点：分布式建索引，具备可扩展性。</p>
+
+<p> 缺点：只是建索引方案，不包括搜索实现。工作在批处理模式，对实时搜索的支持不佳。</p>
+
+<ul>
+<li><a href="http://sna-projects.com">LinkedIn 的开源方案</a></li>
+</ul>
+
+
+<p> 说明：基于 Lucene 的一系列解决方案，包括 准实时搜索 zoie ，facet 搜索实现 bobo ，机器学习算法 decomposer ，摘要存储库 krati ，数据库模式包装 sensei 等等</p>
+
+<p> 优点：经过验证的解决方案，支持分布式，可扩展，丰富的功能实现</p>
+
+<p> 缺点：与 linkedin 公司的联系太紧密，可定制性比较差</p>
+
+<ul>
+<li><a href="https://github.com/tjake/Lucandra">Lucandra</a></li>
+</ul>
+
+
+<p> 说明：基于 Lucene，索引存在 cassandra 数据库中</p>
+
+<p> 优点：参考 cassandra 的优点</p>
+
+<p> 缺点：参考 cassandra 的缺点。另外，这只是一个 demo，没有经过大量验证</p>
+
+<ul>
+<li><a href="https://github.com/akkumar/hbasene">HBasene</a></li>
+</ul>
+
+
+<p> 说明：基于 Lucene，索引存在 HBase 数据库中</p>
+
+<p> 优点：参考 HBase 的优点</p>
+
+<p> 缺点：参考 HBase 的缺点。另外，在实现中，lucene terms 是存成行，但每个 term 对应的 posting lists 是以列的方式存储的。随着单个 term 的 posting lists 的增大，查询时的速度受到的影响会非常大</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[使用 Octopress 写作]]></title>
+    <link href="http://trainchou.github.io/blog/write-with-octopress/"/>
+    <updated>2014-11-26T13:37:41+08:00</updated>
+    <id>http://trainchou.github.io/blog/write-with-octopress</id>
+    <content type="html"><![CDATA[<ol>
+<li><p>使用Octopress的原因
+最近在学习使用 vim + Markdown + git 的方式编写和管理文档。
+使用这些工具的好处：</p>
+
+<ul>
+<li>vim是一款非常强大的编辑器，特别是在习惯使用它以后。它有很多的插件和自定义选项可以将你的vim编辑器打造成属于你自己的强大武器。我目前使用的插件有：
+
+<ul>
+<li>pathogen.vim 管理插件的插件</li>
+<li>markdown.vim Markdown插件</li>
+<li>fcitx.vim 在切换模式时自动切换输入法的插件</li>
+<li>Markdown 有助于在写作过程中减轻对格式的关注，而专注于写作本身。在使用vim写Markdown时，除了通过markdown.vim插件来实现高亮等功能外，还可以通过chrome浏览器的 Markdown Preview Plus 插件进行实时预览。另外由于Markdown是一个纯文本的文件，便于版本管理。</li>
+</ul>
+</li>
+<li></li>
+</ul>
+</li>
+<li><p>存在的问题</p></li>
+<li>问题的解决</li>
 </ol>
 
 ]]></content>
