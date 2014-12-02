@@ -5,7 +5,7 @@ date: 2014-11-27 15:42:21 +0800
 comments: true
 categories: 大数据
 ---
-# 搜索引擎选取调研文档
+# 搜索引擎选型调研文档
 
 ## Elasticsearch简介[<sup>*</sup>](http://fuxiaopang.gitbooks.io/learnelasticsearch)
 
@@ -13,7 +13,7 @@ Elasticsearch是一个**实时**的**分布式**搜索和分析引擎。它可�
 
 它可以用于**全文搜索**，**结构化搜索**以及**分析**，当然你也可以将这三者进行组合。
 
-Elasticsearch是一个**建立在全文搜索引擎Apache Lucene(TM)基础上**的搜索引擎，可以说Lucene是当今最先进，最高效的全功能开源搜索引擎框架。
+Elasticsearch是一个**建立在全文搜索引擎 Apache Lucene(TM) 基础上**的搜索引擎，可以说Lucene是当今最先进，最高效的全功能开源搜索引擎框架。
 
 但是Lucene只是一个框架，要充分利用它的功能，需要使用JAVA，并且在程序中集成Lucene。需要很多的学习了解，才能明白它是如何运行的，Lucene确实非常复杂。
 
@@ -96,7 +96,7 @@ Solr是用Java编写、运行在Servlet容器（如Apache Tomcat或Jetty）的�
 
 随着数据量的增加，Solr的搜索效率会变得更低，而Elasticsearch却没有明显的变化。
 
-![search_fresh_index_while_indexing](../images/search_fresh_index_while_indexing.png)
+![search_fresh_index_while_indexing](../images/search_fresh_index_while_indexing2.png)
 
 综上所述，Solr的架构不适合实时搜索的应用。
 
