@@ -9,11 +9,11 @@ categories: 大数据
 
 ## Elasticsearch简介[<sup>*</sup>](http://fuxiaopang.gitbooks.io/learnelasticsearch)
 
-Elasticsearch是一个实时的分布式搜索和分析引擎。它可以帮助你用前所未有的速度去处理大规模数据。
+Elasticsearch是一个**实时**的**分布式**搜索和分析引擎。它可以帮助你用前所未有的速度去处理大规模数据。
 
-它可以用于全文搜索，结构化搜索以及分析，当然你也可以将这三者进行组合。
+它可以用于**全文搜索**，**结构化搜索**以及**分析**，当然你也可以将这三者进行组合。
 
-Elasticsearch是一个建立在全文搜索引擎Apache Lucene(TM)基础上的搜索引擎，可以说Lucene是当今最先进，最高效的全功能开源搜索引擎框架。
+Elasticsearch是一个**建立在全文搜索引擎Apache Lucene(TM)基础上**的搜索引擎，可以说Lucene是当今最先进，最高效的全功能开源搜索引擎框架。
 
 但是Lucene只是一个框架，要充分利用它的功能，需要使用JAVA，并且在程序中集成Lucene。需要很多的学习了解，才能明白它是如何运行的，Lucene确实非常复杂。
 
@@ -29,9 +29,9 @@ Elasticsearch使用Lucene作为内部引擎，但是在使用它做全文搜索�
 
 这么多的功能被集成到一台服务器上，你可以轻松地通过客户端或者任何你喜欢的程序语言与ES的RESTful API进行交流。
 
-Elasticsearch的上手是非常简单的。它附带了很多非常合理的默认值，这让初学者很好地避免一上手就要面对复杂的理论，
+Elasticsearch的**上手是非常简单**的。它附带了很多**非常合理的默认值**，这让初学者很好地避免一上手就要面对复杂的理论，
 
-它安装好了就可以使用了，用很小的学习成本就可以变得很有生产力。
+它安装好了就可以使用了，用**很小的学习成本**就可以变得很有生产力。
 
 随着越学越深入，还可以利用Elasticsearch更多高级的功能，整个引擎可以很灵活地进行配置。可以根据自身需求来定制属于自己的Elasticsearch。
 
@@ -56,7 +56,7 @@ Elasticsearch的上手是非常简单的。它附带了很多非常合理的默�
 
 - Elasticsearch 完全支持 Apache Lucene 的接近实时的搜索。
 
-- 处理**多用户**（[multitenancy](http://en.wikipedia.org/wiki/Multitenancy)）不需要特殊配置，而Solr则需要更多的高级设置。 
+- 处理**多租户**（[multitenancy](http://en.wikipedia.org/wiki/Multitenancy)）不需要特殊配置，而Solr则需要更多的高级设置。 
 
 - Elasticsearch 采用 Gateway 的概念，使得完备份更加简单。
 
@@ -68,7 +68,7 @@ Elasticsearch的上手是非常简单的。它附带了很多非常合理的默�
 
 ## Solr简介[<sup>*</sup>](http://zh.wikipedia.org/wiki/Solr)
 
-Solr（读作“solar”）是Apache Lucene项目的开源企业搜索平台。其主要功能包括全文检索、命中标示、分面搜索、动态聚类、数据库集成，以及富文本（如Word、PDF）的处理。Solr是高度可扩展的，并提供了分布式搜索和索引复制。Solr是最流行的企业级搜索引擎，Solr4 还增加了NoSQL支持。
+Solr（读作“solar”）是Apache Lucene项目的开源企业搜索平台。其主要功能包括**全文检索**、**命中标示**、**分面搜索**、**动态聚类**、**数据库集成**，以及**富文本（如Word、PDF）的处理**。Solr是**高度可扩展**的，并提供了**分布式搜索和索引复制**。Solr是**最流行的企业级搜索引擎**，Solr4 还增加了NoSQL支持。
 
 Solr是用Java编写、运行在Servlet容器（如Apache Tomcat或Jetty）的一个独立的全文搜索服务器。 Solr采用了Lucene Java搜索库为核心的全文索引和搜索，并具有类似REST的HTTP/XML和JSON的API。 Solr强大的外部配置功能使得无需进行Java编码，便可对其进行调整以适应多种类型的应用程序。Solr有一个插件架构，以支持更多的高级定制。
 
