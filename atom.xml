@@ -4,7 +4,7 @@
   <title><![CDATA[叽歪]]></title>
   <link href="http://trainchou.github.io/atom.xml" rel="self"/>
   <link href="http://trainchou.github.io/"/>
-  <updated>2014-12-01T17:47:21+08:00</updated>
+  <updated>2014-12-02T10:59:10+08:00</updated>
   <id>http://trainchou.github.io/</id>
   <author>
     <name><![CDATA[zcy]]></name>
@@ -22,11 +22,11 @@
 
 <h2>Elasticsearch简介<a href="http://fuxiaopang.gitbooks.io/learnelasticsearch"><sup>*</sup></a></h2>
 
-<p>Elasticsearch是一个实时的分布式搜索和分析引擎。它可以帮助你用前所未有的速度去处理大规模数据。</p>
+<p>Elasticsearch是一个<strong>实时</strong>的<strong>分布式</strong>搜索和分析引擎。它可以帮助你用前所未有的速度去处理大规模数据。</p>
 
-<p>它可以用于全文搜索，结构化搜索以及分析，当然你也可以将这三者进行组合。</p>
+<p>它可以用于<strong>全文搜索</strong>，<strong>结构化搜索</strong>以及<strong>分析</strong>，当然你也可以将这三者进行组合。</p>
 
-<p>Elasticsearch是一个建立在全文搜索引擎Apache Lucene&trade;基础上的搜索引擎，可以说Lucene是当今最先进，最高效的全功能开源搜索引擎框架。</p>
+<p>Elasticsearch是一个<strong>建立在全文搜索引擎Apache Lucene&trade;基础上</strong>的搜索引擎，可以说Lucene是当今最先进，最高效的全功能开源搜索引擎框架。</p>
 
 <p>但是Lucene只是一个框架，要充分利用它的功能，需要使用JAVA，并且在程序中集成Lucene。需要很多的学习了解，才能明白它是如何运行的，Lucene确实非常复杂。</p>
 
@@ -43,9 +43,9 @@
 
 <p>这么多的功能被集成到一台服务器上，你可以轻松地通过客户端或者任何你喜欢的程序语言与ES的RESTful API进行交流。</p>
 
-<p>Elasticsearch的上手是非常简单的。它附带了很多非常合理的默认值，这让初学者很好地避免一上手就要面对复杂的理论，</p>
+<p>Elasticsearch的<strong>上手是非常简单</strong>的。它附带了很多<strong>非常合理的默认值</strong>，这让初学者很好地避免一上手就要面对复杂的理论，</p>
 
-<p>它安装好了就可以使用了，用很小的学习成本就可以变得很有生产力。</p>
+<p>它安装好了就可以使用了，用<strong>很小的学习成本</strong>就可以变得很有生产力。</p>
 
 <p>随着越学越深入，还可以利用Elasticsearch更多高级的功能，整个引擎可以很灵活地进行配置。可以根据自身需求来定制属于自己的Elasticsearch。</p>
 
@@ -69,7 +69,7 @@
 <ol>
 <li><p>Elasticsearch是分布式的。不需要其他组件，分发是实时的，被叫做&#8221;Push replication&#8221;。</p></li>
 <li><p>Elasticsearch 完全支持 Apache Lucene 的接近实时的搜索。</p></li>
-<li><p>处理<strong>多用户</strong>（<a href="http://en.wikipedia.org/wiki/Multitenancy">multitenancy</a>）不需要特殊配置，而Solr则需要更多的高级设置。</p></li>
+<li><p>处理<strong>多租户</strong>（<a href="http://en.wikipedia.org/wiki/Multitenancy">multitenancy</a>）不需要特殊配置，而Solr则需要更多的高级设置。</p></li>
 <li><p>Elasticsearch 采用 Gateway 的概念，使得完备份更加简单。</p></li>
 </ol>
 
@@ -84,7 +84,7 @@
 
 <h2>Solr简介<a href="http://zh.wikipedia.org/wiki/Solr"><sup>*</sup></a></h2>
 
-<p>Solr（读作“solar”）是Apache Lucene项目的开源企业搜索平台。其主要功能包括全文检索、命中标示、分面搜索、动态聚类、数据库集成，以及富文本（如Word、PDF）的处理。Solr是高度可扩展的，并提供了分布式搜索和索引复制。Solr是最流行的企业级搜索引擎，Solr4 还增加了NoSQL支持。</p>
+<p>Solr（读作“solar”）是Apache Lucene项目的开源企业搜索平台。其主要功能包括<strong>全文检索</strong>、<strong>命中标示</strong>、<strong>分面搜索</strong>、<strong>动态聚类</strong>、<strong>数据库集成</strong>，以及<strong>富文本（如Word、PDF）的处理</strong>。Solr是<strong>高度可扩展</strong>的，并提供了<strong>分布式搜索和索引复制</strong>。Solr是<strong>最流行的企业级搜索引擎</strong>，Solr4 还增加了NoSQL支持。</p>
 
 <p>Solr是用Java编写、运行在Servlet容器（如Apache Tomcat或Jetty）的一个独立的全文搜索服务器。 Solr采用了Lucene Java搜索库为核心的全文索引和搜索，并具有类似REST的HTTP/XML和JSON的API。 Solr强大的外部配置功能使得无需进行Java编码，便可对其进行调整以适应多种类型的应用程序。Solr有一个插件架构，以支持更多的高级定制。</p>
 
