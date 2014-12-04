@@ -53,36 +53,34 @@ Elasticsearch的**上手是非常简单**的。它附带了很多**非常合理�
 ### 优点
 
 1. Elasticsearch是分布式的。不需要其他组件，分发是实时的，被叫做"Push replication"。
-
 - Elasticsearch 完全支持 Apache Lucene 的接近实时的搜索。
-
 - 处理**多租户**（[multitenancy](http://en.wikipedia.org/wiki/Multitenancy)）不需要特殊配置，而Solr则需要更多的高级设置。 
-
 - Elasticsearch 采用 Gateway 的概念，使得完备份更加简单。
+- 各节点组成对等的网络结构，某些节点出现故障时会自动分配其他节点代替其进行工作。
 
 ### 缺点
 
 1. 只有一名开发者（当前Elasticsearch GitHub组织已经不只如此，已经有了相当活跃的维护者）
-
 - 还不够自动（不适合当前新的Index Warmup API）
 
 ## Solr简介[<sup>*</sup>](http://zh.wikipedia.org/wiki/Solr)
 
 Solr（读作“solar”）是Apache Lucene项目的开源企业搜索平台。其主要功能包括**全文检索**、**命中标示**、**分面搜索**、**动态聚类**、**数据库集成**，以及**富文本（如Word、PDF）的处理**。Solr是**高度可扩展**的，并提供了**分布式搜索和索引复制**。Solr是**最流行的企业级搜索引擎**，Solr4 还增加了NoSQL支持。
 
-Solr是用Java编写、运行在Servlet容器（如Apache Tomcat或Jetty）的一个独立的全文搜索服务器。 Solr采用了Lucene Java搜索库为核心的全文索引和搜索，并具有类似REST的HTTP/XML和JSON的API。 Solr强大的外部配置功能使得无需进行Java编码，便可对其进行调整以适应多种类型的应用程序。Solr有一个插件架构，以支持更多的高级定制。
+Solr是用Java编写、运行在Servlet容器（如 Apache Tomcat 或Jetty）的一个独立的全文搜索服务器。 Solr采用了 Lucene Java 搜索库为核心的全文索引和搜索，并具有类似REST的HTTP/XML和JSON的API。Solr强大的外部配置功能使得无需进行Java编码，便可对其进行调整以适应多种类型的应用程序。Solr有一个插件架构，以支持更多的高级定制。
 
-因为2010年Apache Lucene和Apache Solr项目合并，两个项目是由同一个Apache软件基金会开发团队制作实现的。提到技术或产品时，Lucene/Solr或Solr/Lucene是一样的。
+因为2010年 Apache Lucene 和 Apache Solr 项目合并，两个项目是由同一个Apache软件基金会开发团队制作实现的。提到技术或产品时，Lucene/Solr或Solr/Lucene是一样的。
 
 ## Solr的优缺点
 
 ### 优点
 1. Solr有一个更大、更成熟的用户、开发和贡献者社区。
+- 支持添加多种格式的索引，如：HTML、PDF、微软 Office 系列软件格式以及 JSON、XML、CSV 等纯文本格式。
 - Solr比较成熟、稳定。
 - 不考虑建索引的同时进行搜索，速度更快。
 
 ### 缺点
-1. 建立索引时，搜索效率下降。
+1. 建立索引时，搜索效率下降，实时索引搜索效率不高。
 
 ## Elasticsearch与Solr的比较[<sup>*</sup>](http://blog.socialcast.com/realtime-search-solr-vs-elasticsearch/)
 
@@ -105,6 +103,10 @@ Solr是用Java编写、运行在Servlet容器（如Apache Tomcat或Jetty）的�
 下图为将搜索引擎从Solr转到Elasticsearch以后的平均查询速度有了50倍的提升。
 
 ![average_execution_time](../images/average_execution_time.jpg)
+
+## Elasticsearch 与 Solr 的比较总结
+
+Solr 是传统搜索应用的有力解决方案，但 Elasticsearch 更适用于新兴的实时搜索应用。
 
 ## 其他基于Lucene的开源搜索引擎解决方案[<sup>*</sup>](http://mail-archives.apache.org/mod_mbox/hbase-user/201006.mbox/%3C149150.78881.qm@web50304.mail.re2.yahoo.com%3E)
 
