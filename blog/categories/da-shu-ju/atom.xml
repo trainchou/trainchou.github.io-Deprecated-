@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 大数据 | 叽歪]]></title>
   <link href="http://trainchou.github.io/blog/categories/da-shu-ju/atom.xml" rel="self"/>
   <link href="http://trainchou.github.io/"/>
-  <updated>2014-12-02T11:47:45+08:00</updated>
+  <updated>2014-12-04T16:46:27+08:00</updated>
   <id>http://trainchou.github.io/</id>
   <author>
     <name><![CDATA[zcy]]></name>
@@ -67,18 +67,19 @@
 <h3>优点</h3>
 
 <ol>
-<li><p>Elasticsearch是分布式的。不需要其他组件，分发是实时的，被叫做&#8221;Push replication&#8221;。</p></li>
-<li><p>Elasticsearch 完全支持 Apache Lucene 的接近实时的搜索。</p></li>
-<li><p>处理<strong>多租户</strong>（<a href="http://en.wikipedia.org/wiki/Multitenancy">multitenancy</a>）不需要特殊配置，而Solr则需要更多的高级设置。</p></li>
-<li><p>Elasticsearch 采用 Gateway 的概念，使得完备份更加简单。</p></li>
+<li>Elasticsearch是分布式的。不需要其他组件，分发是实时的，被叫做&#8221;Push replication&#8221;。</li>
+<li>Elasticsearch 完全支持 Apache Lucene 的接近实时的搜索。</li>
+<li>处理<strong>多租户</strong>（<a href="http://en.wikipedia.org/wiki/Multitenancy">multitenancy</a>）不需要特殊配置，而Solr则需要更多的高级设置。</li>
+<li>Elasticsearch 采用 Gateway 的概念，使得完备份更加简单。</li>
+<li>各节点组成对等的网络结构，某些节点出现故障时会自动分配其他节点代替其进行工作。</li>
 </ol>
 
 
 <h3>缺点</h3>
 
 <ol>
-<li><p>只有一名开发者（当前Elasticsearch GitHub组织已经不只如此，已经有了相当活跃的维护者）</p></li>
-<li><p>还不够自动（不适合当前新的Index Warmup API）</p></li>
+<li>只有一名开发者（当前Elasticsearch GitHub组织已经不只如此，已经有了相当活跃的维护者）</li>
+<li>还不够自动（不适合当前新的Index Warmup API）</li>
 </ol>
 
 
@@ -86,9 +87,9 @@
 
 <p>Solr（读作“solar”）是Apache Lucene项目的开源企业搜索平台。其主要功能包括<strong>全文检索</strong>、<strong>命中标示</strong>、<strong>分面搜索</strong>、<strong>动态聚类</strong>、<strong>数据库集成</strong>，以及<strong>富文本（如Word、PDF）的处理</strong>。Solr是<strong>高度可扩展</strong>的，并提供了<strong>分布式搜索和索引复制</strong>。Solr是<strong>最流行的企业级搜索引擎</strong>，Solr4 还增加了NoSQL支持。</p>
 
-<p>Solr是用Java编写、运行在Servlet容器（如Apache Tomcat或Jetty）的一个独立的全文搜索服务器。 Solr采用了Lucene Java搜索库为核心的全文索引和搜索，并具有类似REST的HTTP/XML和JSON的API。 Solr强大的外部配置功能使得无需进行Java编码，便可对其进行调整以适应多种类型的应用程序。Solr有一个插件架构，以支持更多的高级定制。</p>
+<p>Solr是用Java编写、运行在Servlet容器（如 Apache Tomcat 或Jetty）的一个独立的全文搜索服务器。 Solr采用了 Lucene Java 搜索库为核心的全文索引和搜索，并具有类似REST的HTTP/XML和JSON的API。Solr强大的外部配置功能使得无需进行Java编码，便可对其进行调整以适应多种类型的应用程序。Solr有一个插件架构，以支持更多的高级定制。</p>
 
-<p>因为2010年Apache Lucene和Apache Solr项目合并，两个项目是由同一个Apache软件基金会开发团队制作实现的。提到技术或产品时，Lucene/Solr或Solr/Lucene是一样的。</p>
+<p>因为2010年 Apache Lucene 和 Apache Solr 项目合并，两个项目是由同一个Apache软件基金会开发团队制作实现的。提到技术或产品时，Lucene/Solr或Solr/Lucene是一样的。</p>
 
 <h2>Solr的优缺点</h2>
 
@@ -96,6 +97,7 @@
 
 <ol>
 <li>Solr有一个更大、更成熟的用户、开发和贡献者社区。</li>
+<li>支持添加多种格式的索引，如：HTML、PDF、微软 Office 系列软件格式以及 JSON、XML、CSV 等纯文本格式。</li>
 <li>Solr比较成熟、稳定。</li>
 <li>不考虑建索引的同时进行搜索，速度更快。</li>
 </ol>
@@ -104,7 +106,7 @@
 <h3>缺点</h3>
 
 <ol>
-<li>建立索引时，搜索效率下降。</li>
+<li>建立索引时，搜索效率下降，实时索引搜索效率不高。</li>
 </ol>
 
 
@@ -129,6 +131,10 @@
 <p>下图为将搜索引擎从Solr转到Elasticsearch以后的平均查询速度有了50倍的提升。</p>
 
 <p><img src="../images/average_execution_time.jpg" alt="average_execution_time" /></p>
+
+<h2>Elasticsearch 与 Solr 的比较总结</h2>
+
+<p>Solr 是传统搜索应用的有力解决方案，但 Elasticsearch 更适用于新兴的实时搜索应用。</p>
 
 <h2>其他基于Lucene的开源搜索引擎解决方案<a href="http://mail-archives.apache.org/mod_mbox/hbase-user/201006.mbox/%3C149150.78881.qm@web50304.mail.re2.yahoo.com%3E"><sup>*</sup></a></h2>
 
