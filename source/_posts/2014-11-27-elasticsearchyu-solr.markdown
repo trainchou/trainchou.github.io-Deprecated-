@@ -87,15 +87,15 @@ Solr是用Java编写、运行在Servlet容器（如 Apache Tomcat 或Jetty）的
 
 当单纯的对已有数据进行搜索时，Solr更快。
 
-![Search Fesh Index While Idle](../images/search_fresh_index_while_idle.png)
+![Search Fesh Index While Idle](/images/search_fresh_index_while_idle.png)
 
 当实时建立索引时, Solr会产生io阻塞，查询性能较差, Elasticsearch具有明显的优势。
 
-![search_fresh_index_while_indexing](../images/search_fresh_index_while_indexing.png)
+![search_fresh_index_while_indexing](/images/search_fresh_index_while_indexing.png)
 
 随着数据量的增加，Solr的搜索效率会变得更低，而Elasticsearch却没有明显的变化。
 
-![search_fresh_index_while_indexing](../images/search_fresh_index_while_indexing2.png)
+![search_fresh_index_while_indexing](/images/search_fresh_index_while_indexing2.png)
 
 综上所述，Solr的架构不适合实时搜索的应用。
 
@@ -103,7 +103,7 @@ Solr是用Java编写、运行在Servlet容器（如 Apache Tomcat 或Jetty）的
 
 下图为将搜索引擎从Solr转到Elasticsearch以后的平均查询速度有了50倍的提升。
 
-![average_execution_time](../images/average_execution_time.jpg)
+![average_execution_time](/images/average_execution_time.jpg)
 
 ## Elasticsearch 与 Solr 的比较总结
 
